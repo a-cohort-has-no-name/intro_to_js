@@ -2,12 +2,19 @@
 <html>
   <head>
     <title>JavaScript Example</title>
+    <style>
+      .fancy {
+        font-style: italic;
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <p onmousedown="changeParagraph(this)">First p tag</p>
     <p onmousedown="changeParagraph(this)">Second p tag</p>
     <p onmousedown="changeParagraph(this)">Third p tag</p>
     <p onmousedown="changeParagraph(this)">Fourth p tag</p>
+    <button onclick="styleAllParagraphs()">Toggle paragraph style</button>
   </body>
 </html>
 
@@ -16,4 +23,28 @@
     console.log(ptag);
     ptag.style.color = "red";
   }
+
+  function styleAllParagraphs() {
+    var ptags = document.querySelectorAll('p');
+    for (var i = 0; i < ptags.length; i++) {
+      var ptag = ptags[i];
+      ptag.classList.toggle('fancy');
+    }
+  }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
