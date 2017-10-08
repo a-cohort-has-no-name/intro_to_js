@@ -2,6 +2,11 @@
 <html>
   <head>
     <title>JavaScript Example!!!</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <h1 ondblclick="toggleDetails()" onmousemove="showCoords(event)">Alexander Hamilton</h1>
@@ -12,11 +17,7 @@
 <script>
   function toggleDetails() {
     var ptag = document.querySelector('p');
-    if (ptag.style.display === "none") {
-      ptag.style.display = "block";
-    } else {
-      ptag.style.display = "none";
-    }
+    ptag.classList.toggle('hidden');
   }
 
   function showCoords(event) {
